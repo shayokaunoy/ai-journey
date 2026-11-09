@@ -48,6 +48,21 @@ def count_result(reviews):
     
     return positive, failed
 
+
+def label_reviews(reviews):
+    result = []
+    for review in reviews:
+        question = "Is this review positive or negative? Answer in one word: " + review
+        answer = ask_gemini(question)
+        result.append({"review": review, "label": answer})
+    return result
+
+
+
+
+
+
+
         
 positive, failed = count_result(reviews)
 print("Positive:", positive)
