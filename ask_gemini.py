@@ -60,7 +60,8 @@ def label_reviews(reviews):
 
 
 
-
+labeled = label_reviews(reviews)
+print(labeled)
 
 
         
