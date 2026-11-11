@@ -30,8 +30,30 @@ reviews = [
 ]
 
 def label_reviews(reviews):
+    
+    result = []
     for review in reviews:
-        question = "Is this postivie or negative write it with one word" + review
+        question = "Is this postivie or negative write it with one word: " + review
         answer = ask_gemini(question)
+        result.append({"review": review, "label": answer})
+    return result
 
-print(answer)
+labels = label_reviews(reviews)
+
+def count_label(reviews, label):
+    count = 0
+    for review in reviews:
+        if review["label"] == label:
+            count = count + 1
+            
+    return count
+
+print("Positive:", count_label(labels, "Positive"))
+print("Negative:", count_label(labels, "Negative"))
+
+def save_labels(labels, filename):
+    text = json.dumps(labels)
+    with open(filename, "w") as f:
+        f.write(text)
+save_labels(labels, r"E:\ai-journey\labels.json")
+print("Saved")
