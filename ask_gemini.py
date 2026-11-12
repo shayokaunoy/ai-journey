@@ -65,15 +65,15 @@ def save_positive(reviews, filename):
     return count
 
 
-positives = positive_reviews(reviews)
-with open(r"E:\ai-journey\positives.txt", "w") as f:
-    for item in positives:
-        f.write(item + "\n")
-with open(r"E:\ai-journey\positives.txt", "r") as f:
-    print(f.read(), end="")
+# positives = positive_reviews(reviews)
+# with open(r"E:\ai-journey\positives.txt", "w") as f:
+#     for item in positives:
+#         f.write(item + "\n")
+# with open(r"E:\ai-journey\positives.txt", "r") as f:
+#     print(f.read(), end="")
 
-saved = save_positive(reviews, r"E:\ai-journey\positives2.txt")
-print("Saved:", saved)
+# saved = save_positive(reviews, r"E:\ai-journey\positives2.txt")
+# print("Saved:", saved)
 
 
     
