@@ -34,8 +34,8 @@ def count_positive(texts):
 # label = get_label(answer)
 # print(label)
 def safe_label(text):
-    # text = text.replace("```json", "")
-    # text = text.replace("```", "")
+    text = text.replace("```json", "")
+    text = text.replace("```", "")
     try:
         data = json.loads(text)
         return data["label"]
