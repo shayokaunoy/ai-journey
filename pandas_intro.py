@@ -28,8 +28,14 @@ table = pd.DataFrame(games)
 # print(high_rating["name"])
 # print(high_rating["price"].mean())
 
-both = table[(table["price"] > 40) & (table["rating"] > 8)]
-print(both)
+# both = table[(table["price"] > 40) & (table["rating"] > 8)]
+# print(both)
 
-either = table[(table["price"] > 40) | (table["rating"] > 8)]
-print(either)
+# either = table[(table["price"] > 40) | (table["rating"] > 8)]
+# print(either)
+
+# print(table[(table["price"] > 40) & (table["rating"] >= 8)])
+# print(table[(table["price"] > 40) | (table["rating"] >= 8)])
+
+normal_product = table[(table["price"] < 50) & (table["rating"] >= 7)]
+print(normal_product["name"])
