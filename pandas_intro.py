@@ -1,14 +1,14 @@
-import pandas as pd
+# import pandas as pd
 
-games = [
-    {"name": "GTA VI", "price": 30, "rating": 8},
-    {"name": "Red Dead Redemption 3", "price": 60, "rating": 9},
-    {"name": "Assassins Creed", "price": 15, "rating": 7},
-    {"name": "Battlefield 2050", "price": 45, "rating": 6}
-]
+# games = [
+#     {"name": "GTA VI", "price": 30, "rating": 8},
+#     {"name": "Red Dead Redemption 3", "price": 60, "rating": 9},
+#     {"name": "Assassins Creed", "price": 15, "rating": 7},
+#     {"name": "Battlefield 2050", "price": 45, "rating": 6}
+# ]
 
-table = pd.DataFrame(games)
-# print(table)
+# table = pd.DataFrame(games)
+# # print(table)
 
 # # print(table["price"])
 # # print(table["price"].sum())
@@ -37,5 +37,23 @@ table = pd.DataFrame(games)
 # print(table[(table["price"] > 40) & (table["rating"] >= 8)])
 # print(table[(table["price"] > 40) | (table["rating"] >= 8)])
 
-normal_product = table[(table["price"] < 50) & (table["rating"] >= 7)]
-print(normal_product["name"])
+import pandas as pd
+
+games = [
+    {"name": "GTA VI", "price": 30, "rating": 8},
+    {"name": "Red Dead Redemption 3", "price": 60, "rating": 9},
+    {"name": "Assassins Creed", "price": 15, "rating": 7},
+    {"name": "Battlefield 2050", "price": 45, "rating": 6}
+]
+
+table = pd.DataFrame(games)
+
+# print(table.sort_values("price"))
+# print(table.sort_values("price", ascending=True))
+
+# print(table.sort_values("rating", ascending=False)["name"])
+
+good_rating = table[table["rating"] >= 7]
+
+print(good_rating.sort_values("price", ascending=False)["name"])
+                    
