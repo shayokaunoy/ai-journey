@@ -4,13 +4,24 @@ table = pd.read_csv("games.csv")
 
 print(table)
 
-low_price = table[table["price"] < 50]
-sorted_games = low_price.sort_values("rating", ascending=False)
+high_rating = table[table["rating"] >= 7]
 
-print(sorted_games["name"])
+# sorted_game = high_price.sort_values("price", ascending=False)
+# print(sorted_game["name"])
 
-table["price_per_rating"] = table["price"] / table["rating"]
 
-result = table.groupby("genre")["price_per_rating"].mean().sort_values(ascending=True)
+# top_price = table.groupby("genre")["price"].max()
+# print(top_price.sort_values(ascending=True))
+# print(high_rating.groupby("genre")["name"].count())
 
-print(result)
+# top_price = table[table["price"] >= 30]
+# sorted_games_byrated = top_price.groupby("genre")["rating"].mean()
+# print(sorted_games_byrated.sort_values(ascending=False))
+
+table["hours"] = [60, 80, 30, 20, 50]
+hour_calc = table.groupby("genre")["hours"].mean()
+print(hour_calc.sort_values(ascending=False))
+
+long_hour = table[table["hours"] >= 50]
+
+long_hour.to_csv("long_games.csv", index=False)
