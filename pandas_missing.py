@@ -10,3 +10,6 @@ print(table)
 avg2 = table["rating"].mean()
 table["rating"] = table["rating"].fillna(avg2)
 print(table)
+
+print(table.isna().sum())
+print(table.describe())
