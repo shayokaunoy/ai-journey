@@ -13,5 +13,8 @@ conn.execute("INSERT INTO games VALUES ('Battlefield 2050', 45,7, 'shooter')")
 # print(rows)
 
 
-rows = conn.execute("SELECT genre, AVG(rating) FROM games GROUP BY genre ORDER BY AVG(rating) DESC").fetchall()
+# rows = conn.execute("SELECT genre, AVG(rating) FROM games GROUP BY genre ORDER BY AVG(rating) DESC").fetchall()
+# print(rows)
+
+rows = conn.execute("SELECT count(name), AVG(price) FROM games WHERE rating >= 7 ").fetchall()
 print(rows)
