@@ -25,5 +25,8 @@ sales.to_sql("sales", conn, index=False)
 # result = pd.read_sql("SELECT games.name, games.price, sales.copies FROM games JOIN sales ON games.name = sales.name WHERE sales.copies >= 10 ORDER BY sales.copies DESC", conn)
 # print(result)
 
-result = pd.read_sql("SELECT genre, SUM(games.price*sales.copies) AS total_revenue FROM games JOIN sales ON games.name = sales.name GROUP BY genre ORDER BY total_revenue DESC", conn)
+# result = pd.read_sql("SELECT genre, SUM(games.price*sales.copies) AS total_revenue FROM games JOIN sales ON games.name = sales.name GROUP BY genre ORDER BY total_revenue DESC", conn)
+# print(result)
+
+result = pd.read_sql("SELECT genre, AVG(games.price) AS avg_price FROM games  GROUP BY genre HAVING avg_price > 30 ORDER BY avg_price DESC", conn)
 print(result)
