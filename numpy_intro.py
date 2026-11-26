@@ -1,27 +1,29 @@
 import numpy as np
+names = np.array(["GTA VI", "Red Dead Redemption 3", "Assassins Creed Shadows", "Battlefield 2050", "Cyberpunk 2078"])
+games = np.array([
+    [30,20],
+    [60,10],
+    [15, 8],
+    [45,12],
+    [50,15]
+])
 
-prices = np.array([30, 60, 15, 45, 50])
-names = np.array(["GTA VI", "Red Dead Redemption 3", "Assassins Creed", "Battlefield 2050", "Cyberpunk 2078"])
-# print(prices)
-# print(prices + 5)
-# print(prices * 2)
-# print(prices.sum())
-# print(prices.max())
-# print(prices.mean())
+# print(games)
+# print(games.shape)
 
-# print(prices > 40)
-# print(prices[prices > 40])
+# print(games[4])
+# print(games[:, 1])
+# selected = names[games[:, 1] > 10]
+# print(selected)
 
-copies = np.array([25, 12, 6, 0, 8])
-revenue = prices * copies
-# print(revenue)
-# print(revenue.sum())
+# revenues = games[:, 0] * games[:, 1]
+# selected = revenues[games[:, 0] > 40]
+# total = selected.sum()
+# print(total)
 
-# result = revenue[revenue > 500]
-# print(result)
-# print(result.sum())
-
-# print(names[prices > 40])
-# print(copies[prices > 40])
-
-print(names[(prices < 50) & (copies > 5)])
+# print(games.mean())
+# print(games.mean(axis=0))
+# print(games.sum(axis=0))
+# print(games.mean(axis=1))
+# print(games.sum(axis=1))
+print(games.max(axis=0))
